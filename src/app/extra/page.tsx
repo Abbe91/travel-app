@@ -1,7 +1,7 @@
 // src/pages/extra.tsx
 
 import Head from 'next/head';
-import styles from '../../styles/Home.module.css';
+import styles from './Extra.module.css';
 import Footer from '../components/Footer/Footer';
 
 const Extra: React.FC = () => {

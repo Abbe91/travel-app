@@ -1,7 +1,7 @@
 // src/app/sweden/page.tsx
 
 import Box from '../components/Box/Box';
-import styles from './Page.module.css';
+import styles from './Sweden.module.css';
 
 const Sweden = () => {
   return (
