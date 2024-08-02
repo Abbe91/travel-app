@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/navigation'; // Change this import
+import { useRouter } from 'next/navigation';
 import styles from '../styles/Home.module.css';
 
 const europeanCountries = [
@@ -12,12 +12,14 @@ const europeanCountries = [
 
 export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
-  const router = useRouter(); // Updated hook
+  const router = useRouter();
 
   const handleCountryChange = (e) => {
-    const selected = e.target.value;
-    setSelectedCountry(selected);
-    router.push(`/${selected.toLowerCase()}`);
+    setSelectedCountry(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    router.push(`/${selectedCountry.toLowerCase()}`);
   };
 
   return (
@@ -48,6 +50,12 @@ export default function Home() {
               </option>
             ))}
           </select>
+          <button
+            className="mt-4 p-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            onClick={handleButtonClick}
+          >
+            Go to {selectedCountry}
+          </button>
         </div>
 
         <div className="mt-8 text-center">
@@ -78,9 +86,6 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

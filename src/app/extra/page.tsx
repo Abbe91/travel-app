@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
+import Footer from '../components/Footer/Footer';
 
 const Extra: React.FC = () => {
   return (
@@ -19,9 +20,7 @@ const Extra: React.FC = () => {
         </p>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

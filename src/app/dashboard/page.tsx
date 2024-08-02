@@ -2,7 +2,6 @@
 
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
-
 const Dashboard: React.FC = () => {
   return (
     <div className={styles.container}>
@@ -19,9 +18,6 @@ const Dashboard: React.FC = () => {
         </p>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
