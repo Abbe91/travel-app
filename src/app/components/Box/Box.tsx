@@ -1,5 +1,3 @@
-// src/app/components/Box.tsx
-
 import styles from './Box.module.css';
 
 type BoxProps = {
