@@ -1,10 +1,25 @@
+"use client";
+
+import { useState } from 'react';
 import Head from 'next/head';
-import { options } from './api/auth/[...nextauth]/options'
-import { getServerSession } from 'next-auth';
+import { useRouter } from 'next/navigation'; // Change this import
 import styles from '../styles/Home.module.css';
 
-export default async function Home() {
-  const session = await getServerSession(options)
+const europeanCountries = [
+  "Sweden", "Norway", "Denmark", "Finland", "Iceland",
+  "Germany", "France", "Italy", "Spain", "Portugal",
+];
+
+export default function Home() {
+  const [selectedCountry, setSelectedCountry] = useState("Sweden");
+  const router = useRouter(); // Updated hook
+
+  const handleCountryChange = (e) => {
+    const selected = e.target.value;
+    setSelectedCountry(selected);
+    router.push(`/${selected.toLowerCase()}`);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,6 +33,27 @@ export default async function Home() {
         <p className={styles.description}>
           This is a custom homepage built with Next.js.
         </p>
+
+        <div className="mt-4 text-center">
+          <label htmlFor="country-select" className="block text-lg font-medium">Select a country:</label>
+          <select
+            id="country-select"
+            className={styles.dropdown}
+            value={selectedCountry}
+            onChange={handleCountryChange}
+          >
+            {europeanCountries.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mt-8 text-center">
+          <h2 className="text-3xl font-semibold">{selectedCountry}</h2>
+          <p className="mt-4">Explore the best restaurants and museums in {selectedCountry}.</p>
+        </div>
 
         <div className={styles.grid}>
           <a href="/about" className={styles.card}>
