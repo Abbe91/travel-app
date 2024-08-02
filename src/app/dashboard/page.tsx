@@ -1,7 +1,7 @@
 // pages/dashboard.tsx
 
 import Head from 'next/head';
-import styles from '../../styles/Home.module.css';
+import styles from './Dashboard.module.css';
 const Dashboard: React.FC = () => {
   return (
     <div className={styles.container}>
