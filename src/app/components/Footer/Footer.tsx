@@ -1,12 +1,15 @@
+// src/app/components/Footer.tsx
+
 const Footer = () => {
-    return (
-      <section>
-        <footer className="text-center py-4 bg-gray-800 text-white">
-          <p>&copy; 2024 My Website. All rights reserved.</p>
-        </footer>
-      </section>
-    );
-  };
-  
-  export default Footer;
-  
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <section>
+      <footer className="text-center py-4 bg-gray-800 text-white">
+        <p>&copy; {currentYear} My Website. All rights reserved.</p>
+      </footer>
+    </section>
+  );
+};
+
+export default Footer;
