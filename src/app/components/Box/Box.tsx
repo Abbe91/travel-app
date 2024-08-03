@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import Link from 'next/link';
 import styles from './Box.module.css';
 
 type BoxProps = {
@@ -29,10 +30,15 @@ const Box = ({ country, name }: BoxProps) => {
 
   return (
     <div className={styles.box}>
-      <h2>{name} in {country}</h2>
+      <Link href={`/${country.toLowerCase()}/${name.toLowerCase()}`}>
+        <p className={styles.link}>
+          <h3>{name} in {country} &rarr;</h3>
+        </p>
+      </Link>
       <button className={styles.favoriteButton} onClick={toggleFavorite}>
         {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
       </button>
+      
     </div>
   );
 };

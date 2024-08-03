@@ -1,0 +1,19 @@
+/* src/app/[country]/[city]/City.module.css */
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  margin-bottom: 10px;
+}
