@@ -1,25 +1,38 @@
 // src/app/[country]/[city]/page.tsx
 "use client";
-
 import { useParams } from 'next/navigation';
 import styles from './City.module.css';
+import Box from '../../../components/Box/Box';
+import countriesConfig from '../../../../config/countriesConfig';
+import { Key, useEffect, useState } from 'react';
 
-const CityPage = () => {
-  const { country, city } = useParams();
-  // check why the country it is undefined.
-  console.log("why country not appear",country)
+const Gothenburg = () => {
+  const countryName = 'Sweden';
+  useParams();
+  const [countryConfig, setCountryConfig] = useState<any | null>(null);
   
-  // Handle undefined parameters
-  const displayCountry = country ? country.charAt(0).toUpperCase() + country.slice(1) : 'Country';
-  const displayCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'City';
+  
+  useEffect(() => {
+    const config = countriesConfig.find(c => c.name.toLowerCase() === countryName.toLowerCase());
+    setCountryConfig(config);
+  }, []);
+
+  if (!countryConfig) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        Welcome to {displayCity}, {displayCountry}!
+        Welcome to {countryConfig.cities[1]}!
       </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {countryConfig.places.map((place: string, index: Key | null | undefined) => (
+            <Box key={index} country={countryConfig.cities[1]} name={place} />
+          ))}
+        </div>
     </div>
   );
 };
 
-export default CityPage;
+export default Gothenburg;
