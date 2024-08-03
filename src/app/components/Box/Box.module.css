@@ -12,7 +12,13 @@
     font-weight: bold;
   }
   
-  .description {
-    margin-top: 0.5rem;
-  }
-  
+.description {
+  margin-top: 0.5rem;
+}
+
+.favoriteButton {
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  cursor: pointer;
+}
