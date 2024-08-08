@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #0D3B66; /* Dark Blue */
+  --secondary-color: #FAF0CA; /* Light Cream */
+  --accent-color: #F4D35E; /* Soft Yellow */
+  --green-color: #0f766e; /* light Green */
+  --green2-color: #134e4a; /* Dark Green */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +18,11 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 150, 220, 950;
     --background-end-rgb: 0, 0, 0;
+    --primary-color: #0D3B66; /* Dark Blue */
+    --secondary-color: #FAF0CA; /* Light Cream */
+    --accent-color: #F4D35E; /* Soft Yellow */
+    --green-color: #0f766e; /* light Green */
+    --green2-color: #134e4a; /* Dark Green */
   }
 }
 
@@ -33,3 +43,17 @@ body {
   }
 }
 
+/* Example usage of the color variables */
+.header {
+  background-color: var(--green2-color);
+}
+
+.button {
+  background-color: var(--green-color);
+  color: var(--foreground-rgb);
+}
+
+.button-accent {
+  background-color: var(--accent-color);
+  color: var(--foreground-rgb);
+}
