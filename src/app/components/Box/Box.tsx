@@ -1,14 +1,13 @@
-"use client";
-import { useState, useEffect } from 'react';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import styles from './Box.module.css';
 
-type BoxProps = {
+interface BoxProps {
   country: string;
-  stad?: string; // Make stad optional
+  stad?: string;
   name: string;
-  place: string;
+  place?: string;
 };
 
 const Box = ({ country, stad = '', name, place }: BoxProps) => {
@@ -36,9 +35,13 @@ const Box = ({ country, stad = '', name, place }: BoxProps) => {
     console.log("Box Component Props:", { country, stad, name, place });
   }, [country, stad, name, place]);
 
+  const url = place 
+    ? `/${country.toLowerCase()}/cities/${stad.toLowerCase()}/${place.toLowerCase()}`
+    : `/${country.toLowerCase()}/cities/${stad.toLowerCase()}`;
+
   return (
     <div className={styles.box}>
-      <Link href={`/${country.toLowerCase()}/cities/${stad.toLowerCase()}/${place.toLowerCase()}`}>
+      <Link href={url}>
         <p className={styles.link}>
           <h3>{name} in {stad ? `${stad}, ` : ''}{country} &rarr;</h3>
         </p>

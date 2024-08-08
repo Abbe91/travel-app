@@ -11,7 +11,7 @@ interface Params {
 }
 
 const Gothenburg = () => {
-  const { stad } = useParams<Params>();
+  const params = useParams() as unknown as Params;
   const countryName = 'Sweden';
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
   
@@ -34,7 +34,7 @@ const Gothenburg = () => {
           <Box 
             key={index}
             country={countryName}
-            stad={stad || "gothenburg"}
+            stad={params?.stad || "gothenburg"}
             name={place} 
             place={place.toLowerCase().replace(/\s+/g, '-')} 
           />

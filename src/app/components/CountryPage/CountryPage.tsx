@@ -1,13 +1,16 @@
-// src/app/[country]/page.tsx
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Box from '../Box/Box';
 import Link from 'next/link';
 import countriesConfig from '../../../config/countriesConfig';
 import styles from './CountryPage.module.css';
 
+interface Params {
+  country: string;
+}
+
 const CountryPage = () => {
-  const  country  = useParams();
+  const { country } = useParams() as unknown as Params;
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
 
   useEffect(() => {

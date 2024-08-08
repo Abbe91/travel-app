@@ -6,9 +6,10 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import countriesConfig from '../../config/countriesConfig';
 import styles from './Sweden.module.css';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 const Sweden = () => {
-  const params = useParams();
+  const params = useParams() as Params;
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
   const [country, setCountry] = useState<string | null>(null);
 
