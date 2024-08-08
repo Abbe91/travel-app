@@ -1,0 +1,20 @@
+/* src/app/[country]/[stad]/stad.module.css */
+
+.container {
+  padding: 20px;
+  height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  margin-bottom: 10px;
+}

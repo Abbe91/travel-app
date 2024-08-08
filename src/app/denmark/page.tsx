@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import Box from '../components/Box/Box';
 import Link from 'next/link';
 import countriesConfig from '../../config/countriesConfig';
-import styles from './Norway.module.css';
+import styles from './Danmark.module.css';
 
-const Norway = () => {
+const Danmark = () => {
   const router = useRouter();
   const [country, setCountry] = useState<string | null>(null);
 
@@ -32,16 +32,6 @@ const Norway = () => {
         <Link href={`/${country}/favorites`}>
           <p className={styles.favoritesLink}>View Your Favorites</p>
         </Link>
-        <h3 className={styles.heading}>Cities in {countryConfig.name}:</h3>
-        <ul className={styles.citylist}>
-          {countryConfig.stads.map((stad: string, index: number) => (
-            <li key={index} className={styles.cityitem}>
-              <Link href={`/norway/cities/${stad.toLowerCase()}`}>
-                {stad}
-              </Link>
-            </li>
-          ))}
-        </ul>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {countryConfig.places.map((place, index) => (
             <Box key={index} country={countryConfig.name} name={place} />
@@ -52,4 +42,4 @@ const Norway = () => {
   );
 };
 
-export default Norway;
+export default Danmark;

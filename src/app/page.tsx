@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import styles from '../styles/Home.module.css';
@@ -14,7 +14,7 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
   const router = useRouter();
 
-  const handleCountryChange = (e) => {
+  const handleCountryChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setSelectedCountry(e.target.value);
   };
 
@@ -51,7 +51,7 @@ export default function Home() {
             ))}
           </select>
           <button
-            className="mt-4 p-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="mt-4 p-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opastad-50"
             onClick={handleButtonClick}
           >
             Go to {selectedCountry}
