@@ -39,10 +39,10 @@ const Sweden = () => {
         <h2 className={styles.title}>
           Welcome to {countryConfig.name}!
         </h2>
-        <h2 className="text-2xl mb-4">Cities in {countryConfig.name}:</h2>
-        <ul className="list-disc pl-5 mb-8">
+        <h3 className={styles.heading}>Cities in {countryConfig.name}:</h3>
+        <ul className={styles.citylist}>
           {countryConfig.stads.map((stad: string, index: number) => (
-            <li key={index}>
+            <li key={index} className={styles.cityitem}>
               <Link href={`/sweden/cities/${stad.toLowerCase()}`}>
                 {stad}
               </Link>

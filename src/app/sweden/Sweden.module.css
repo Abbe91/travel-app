@@ -21,6 +21,26 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
+
+  .heading {
+    font-size: 1.5rem;
+   
+  }
+  
+  .citylist {
+    list-style-type: disc; 
+    padding-left: 1.25rem; 
+    margin-bottom: 2rem; 
+  }
+  
+  .cityitem {
+    font-size: 1.125rem; 
+    color: #3182ce;
+  }
+  
+  .cityitem a:hover {
+    color: #2b6cb0; 
+  }
   
   @media (min-width: 768px) {
     .grid {

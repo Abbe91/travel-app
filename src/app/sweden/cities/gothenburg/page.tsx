@@ -1,18 +1,14 @@
 // src/app/[country]/[stad]/page.tsx
 "use client";
-import { useParams } from 'next/navigation';
 import styles from './City.module.css';
 import Box from '../../../components/Box/Box';
+import Link from 'next/link';
 import countriesConfig from '../../../../config/countriesConfig';
 import { Key, useEffect, useState } from 'react';
 
-interface Params {
-  stad: string | null;
-}
-
 const Gothenburg = () => {
-  const params = useParams() as unknown as Params;
-  const countryName = 'Sweden';
+  const countryName = 'sweden';
+  const stad = "gothenburg";
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
   
   useEffect(() => {
@@ -26,6 +22,9 @@ const Gothenburg = () => {
 
   return (
     <div className={styles.container}>
+      <Link href={`/${countryName}/cities/${stad}/favorites`}>
+          <p className={styles.favoritesLink}>View Your Favorites</p>
+        </Link>
       <h1 className={styles.title}>
         Welcome to {countryConfig.stads[1]}!
       </h1>
@@ -34,7 +33,7 @@ const Gothenburg = () => {
           <Box 
             key={index}
             country={countryName}
-            stad={params?.stad || "gothenburg"}
+            stad={stad}
             name={place} 
             place={place.toLowerCase().replace(/\s+/g, '-')} 
           />
