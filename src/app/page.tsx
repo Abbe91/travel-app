@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import styles from '../styles/Home.module.css';
@@ -14,7 +14,7 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState("Sweden");
   const router = useRouter();
 
-  const handleCountryChange = (e) => {
+  const handleCountryChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setSelectedCountry(e.target.value);
   };
 

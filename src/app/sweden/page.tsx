@@ -20,9 +20,9 @@ const Sweden = () => {
     setCountryConfig(config);
     const path = window.location.pathname.split('/')[1];
     setCountry(path);
-    console.log("CountryPage countryName:", 'Sweden');
+    /*console.log("CountryPage countryName:", 'Sweden');
     console.log("Path:", path);
-    console.log("CountryConfig:", config);
+    console.log("CountryConfig:", config);*/
   }, []);
 
   if (!countryConfig) {
