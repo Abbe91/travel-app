@@ -1,6 +1,6 @@
 "use client";
 
-import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, useEffect, useState } from 'react';
+import { Key, useEffect, useState } from 'react';
 import Box from '../components/Box/Box';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
@@ -8,20 +8,20 @@ import countriesConfig from '../../config/countriesConfig';
 import styles from './Sweden.module.css';
 
 const Sweden = () => {
-  const countryName = 'Sweden';
   const params = useParams();
-  const [country, setCountry] = useState<string | null>(null);
-  
-  // Log params to debug
-  
-  // Handle undefined parameters
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
+  const [country, setCountry] = useState<string | null>(null);
 
   useEffect(() => {
-    const config = countriesConfig.find(c => c.name.toLowerCase() === countryName.toLowerCase());
+    console.log("Params:", params); // Log params to debug
+
+    const config = countriesConfig.find(c => c.name.toLowerCase() === 'sweden');
     setCountryConfig(config);
     const path = window.location.pathname.split('/')[1];
     setCountry(path);
+    console.log("CountryPage countryName:", 'Sweden');
+    console.log("Path:", path);
+    console.log("CountryConfig:", config);
   }, []);
 
   if (!countryConfig) {
@@ -36,22 +36,28 @@ const Sweden = () => {
           <p className={styles.favoritesLink}>View Your Favorites</p>
         </Link>
         <h2 className={styles.title}>
-        Welcome to {countryConfig.name}!
-      </h2>
+          Welcome to {countryConfig.name}!
+        </h2>
         <h2 className="text-2xl mb-4">Cities in {countryConfig.name}:</h2>
         <ul className="list-disc pl-5 mb-8">
-          {countryConfig.cities.map((city: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | null | undefined, index: Key | null | undefined) => (
+          {countryConfig.stads.map((stad: string, index: number) => (
             <li key={index}>
-              <Link href={`/sweden/cities/${city.toLowerCase()}`}>
-                {city}
+              <Link href={`/sweden/cities/${stad.toLowerCase()}`}>
+                {stad}
               </Link>
             </li>
           ))}
         </ul>
         <h2 className="text-2xl mb-4">Places in {countryConfig.name}:</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {countryConfig.places.map((place, index) => (
-            <Box key={index} country={countryConfig.name} name={place} />
+          {countryConfig.places.map((place: string, index: Key | null | undefined) => (
+            <Box 
+              key={index} 
+              country={countryConfig.name} 
+              stad={params.city} 
+              name={place} 
+              place={place} 
+            />
           ))}
         </div>
       </div>

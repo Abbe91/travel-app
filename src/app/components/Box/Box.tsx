@@ -6,39 +6,46 @@ import styles from './Box.module.css';
 
 type BoxProps = {
   country: string;
+  stad?: string; // Make stad optional
   name: string;
+  place: string;
 };
 
-const Box = ({ country, name }: BoxProps) => {
+const Box = ({ country, stad = '', name, place }: BoxProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-    setIsFavorite(favorites[`${country}-${name}`] || false);
-  }, [country, name]);
+    setIsFavorite(favorites[`${country}-${stad ? `${stad}-` : ''}${name}`] || false);
+  }, [country, stad, name]);
 
   const toggleFavorite = () => {
     const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-    if (favorites[`${country}-${name}`]) {
-      delete favorites[`${country}-${name}`];
+    const key = `${country}-${stad ? `${stad}-` : ''}${name}`;
+    if (favorites[key]) {
+      delete favorites[key];
     } else {
-      favorites[`${country}-${name}`] = true;
+      favorites[key] = true;
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
     setIsFavorite(!isFavorite);
   };
 
+  // Log the props to debug
+  useEffect(() => {
+    console.log("Box Component Props:", { country, stad, name, place });
+  }, [country, stad, name, place]);
+
   return (
     <div className={styles.box}>
-      <Link href={`/${country.toLowerCase()}/${name.toLowerCase()}`}>
+      <Link href={`/${country.toLowerCase()}/cities/${stad.toLowerCase()}/${place.toLowerCase()}`}>
         <p className={styles.link}>
-          <h3>{name} in {country} &rarr;</h3>
+          <h3>{name} in {stad ? `${stad}, ` : ''}{country} &rarr;</h3>
         </p>
       </Link>
       <button className={styles.favoriteButton} onClick={toggleFavorite}>
-        {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
+        {isFavorite ? <FaHeart /> : <FaRegHeart />}
       </button>
-      
     </div>
   );
 };

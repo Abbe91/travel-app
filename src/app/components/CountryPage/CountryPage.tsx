@@ -29,8 +29,8 @@ const CountryPage = () => {
           <a className={styles.favoritesLink}>View Your Favorites</a>
         </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {countryConfig.cities.map((city: string, index: number) => (
-            <Box key={index} country={countryConfig.name} name={city} />
+          {countryConfig.stads.map((stad: string, index: number) => (
+            <Box key={index} country={countryConfig.name} name={stad} place={''} />
           ))}
         </div>
       </div>

@@ -51,7 +51,7 @@ export default function Home() {
             ))}
           </select>
           <button
-            className="mt-4 p-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="mt-4 p-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opastad-50"
             onClick={handleButtonClick}
           >
             Go to {selectedCountry}
