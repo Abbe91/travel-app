@@ -1,8 +1,8 @@
 "use client";
+
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Box from '../../../../components/Box/Box';
-import styles from './Favorites.module.css';
 
 const Favorites = () => {
   const router = useRouter();
@@ -33,18 +33,26 @@ const Favorites = () => {
   }, []);
 
   if (!country) {
-    return <div>Loading...</div>;
+    return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        Your Favorites in {city ? `${city.charAt(0).toUpperCase() + city.slice(1)}, ` : ''}{country.charAt(0).toUpperCase() + country.slice(1)}
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {favorites.map((favorite, index) => (
-          <Box key={index} country={favorite.country} name={favorite.name} />
-        ))}
+    <div className="min-h-screen bg-gradient-to-b from-teal-600 to-teal-900 text-white">
+      <div className="container mx-auto py-8 px-4">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Your Favorites in {city ? `${city.charAt(0).toUpperCase() + city.slice(1)}, ` : ''}{country.charAt(0).toUpperCase() + country.slice(1)}
+        </h1>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {favorites.map((favorite, index) => (
+            <Box 
+              key={index} 
+              country={favorite.country} 
+              name={favorite.name} 
+              stad={favorite.city || ''} 
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

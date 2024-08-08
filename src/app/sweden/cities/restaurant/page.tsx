@@ -4,7 +4,7 @@ const RestaurantSweden = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-600 to-teal-900 text-white">
       <div className="container mx-auto py-8 px-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Explore Restaurants in Gothenburg</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Explore Restaurants in Sweden</h1>
         
         <div className="text-center mb-12">
           <p className="text-lg">Discover the best dining experiences in the city.</p>
