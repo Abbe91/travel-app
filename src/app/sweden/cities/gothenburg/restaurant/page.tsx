@@ -55,6 +55,9 @@ const RestaurantSweden = () => {
             <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
               <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
               <p className="mt-2">{restaurant.description}</p>
+              <p className="mt-2">{restaurant.category}</p>
+              <p className="mt-2">Price: {restaurant.price}</p>
+              <p className="mt-2">Rating: {restaurant.rating}</p>
               <button
                 className={styles.favoriteButton}
                 onClick={() => toggleFavorite(restaurant.name)}
