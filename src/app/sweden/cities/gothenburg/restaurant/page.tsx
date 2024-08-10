@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import styles from "./RestaurantSweden.module.css"; // Assuming you have a CSS module for styles
-import { restaurants } from "../../../../../config/restaurantsConfig"; // Adjust the path as needed
+import styles from "./RestaurantSweden.module.css";
+import { restaurants } from "../../../../../config/restaurantsConfig";
 
 const RestaurantSweden = () => {
   const [favorites, setFavorites] = useState<string[]>([]);

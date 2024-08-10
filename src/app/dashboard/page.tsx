@@ -1,5 +1,3 @@
-// pages/dashboard.tsx
-
 import Head from 'next/head';
 import styles from './Dashboard.module.css';
 const Dashboard: React.FC = () => {

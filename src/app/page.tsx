@@ -33,7 +33,7 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center flex-1 px-4 sm:px-8 lg:px-16">
         {/* Image added before the title */}
         <img
-          src="/images/europ.jpeg" // Replace with your image path
+          src="/images/europ.jpeg"
           alt="Beautiful European landscape"
           className="w-64 h-64 object-cover rounded-full shadow-lg mb-6"
         />

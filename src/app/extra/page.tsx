@@ -1,5 +1,3 @@
-// src/pages/extra.tsx
-
 import Head from 'next/head';
 import styles from './Extra.module.css';
 import Footer from '../components/Footer/Footer';

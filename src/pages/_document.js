@@ -1,4 +1,3 @@
-// pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Fragment } from 'react';
 

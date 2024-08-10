@@ -1,4 +1,3 @@
-// src/app/[country]/[stad]/page.tsx
 "use client";
 import styles from './City.module.css';
 import Box from '../../../components/Box/Box';

@@ -1,5 +1,3 @@
-// config/restaurantConfig.ts
-
 export const restaurants = [
   {
     name: "Heaven 23",
