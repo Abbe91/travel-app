@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styles from "./RestaurantSweden.module.css"; // Assuming you have a CSS module for styles
+import { restaurants } from "../../../../../config/restaurantsConfig"; // Adjust the path as needed
 
 const RestaurantSweden = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -50,55 +51,18 @@ const RestaurantSweden = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {/* Restaurant 1 */}
-          <div className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-            <h2 className="text-2xl font-semibold">Heaven 23</h2>
-            <p className="mt-2">Stunning views and the famous King Size Shrimp Sandwich.</p>
-            <button
-              className={styles.favoriteButton}
-              onClick={() => toggleFavorite("Heaven 23")}
-            >
-              {isFavorite("Heaven 23") ? <FaHeart /> : <FaRegHeart />}
-            </button>
-          </div>
-
-          {/* Restaurant 2 */}
-          <div className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-            <h2 className="text-2xl font-semibold">Thörnströms Kök</h2>
-            <p className="mt-2">Michelin-starred modern Swedish cuisine.</p>
-            <button
-              className={styles.favoriteButton}
-              onClick={() => toggleFavorite("Thörnströms Kök")}
-            >
-              {isFavorite("Thörnströms Kök") ? <FaHeart /> : <FaRegHeart />}
-            </button>
-          </div>
-
-          {/* Restaurant 3 */}
-          <div className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-            <h2 className="text-2xl font-semibold">Sjömagasinet</h2>
-            <p className="mt-2">A waterfront restaurant specializing in seafood dishes.</p>
-            <button
-              className={styles.favoriteButton}
-              onClick={() => toggleFavorite("Sjömagasinet")}
-            >
-              {isFavorite("Sjömagasinet") ? <FaHeart /> : <FaRegHeart />}
-            </button>
-          </div>
-
-          {/* Restaurant 4 */}
-          <div className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-            <h2 className="text-2xl font-semibold">Koka</h2>
-            <p className="mt-2">Innovative Nordic cuisine with seasonal ingredients.</p>
-            <button
-              className={styles.favoriteButton}
-              onClick={() => toggleFavorite("Koka")}
-            >
-              {isFavorite("Koka") ? <FaHeart /> : <FaRegHeart />}
-            </button>
-          </div>
-
-          {/* Add more restaurants as needed */}
+          {restaurants.map((restaurant, index) => (
+            <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
+              <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
+              <p className="mt-2">{restaurant.description}</p>
+              <button
+                className={styles.favoriteButton}
+                onClick={() => toggleFavorite(restaurant.name)}
+              >
+                {isFavorite(restaurant.name) ? <FaHeart /> : <FaRegHeart />}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
