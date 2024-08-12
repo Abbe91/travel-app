@@ -9,7 +9,7 @@ const RestaurantPage: React.FC = () => {
                 <div className="relative z-10 text-center">
                     <h1 className="text-5xl font-bold mb-4">Welcome to Thornströms Kök</h1>
                     <p className="text-xl mb-8">Experience the finest dining in Gothenburg</p>
-                    <a href="#menu" className="bg-teal-500 hover:bg-teal-400 text-primary py-3 px-6 rounded-full text-lg">Explore Our Menu</a>
+                    <a href="#menu" className="bg-teal-500 hover:bg-teal-400 text-primary py-3 px-6 rounded-full text-lg">Explore Our Menu:</a>
                 </div>
             </section>
 
