@@ -26,6 +26,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-teal-600 to-teal-900 text-white">
       <Head>
         <title>Explore Europe</title>
+        {/* https://www.lonelyplanet.com/  I can descover which land to add  */}
         <meta name="description" content="Discover the best places to visit in Europe" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
