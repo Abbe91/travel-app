@@ -4,7 +4,7 @@ const RestaurantPage: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
             {/* Hero Section */}
-            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url('/images/restaurant/sweden/gothenburg/thornstroms-kok.jpg')" }}>
+            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary">
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-center">
                     <h1 className="text-5xl font-bold mb-4">Welcome to Thornströms Kök</h1>
@@ -52,17 +52,12 @@ const RestaurantPage: React.FC = () => {
                         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                             <h3 className="text-2xl font-semibold mb-2 text-2xl font-semibold mb-4 text-gray-700">Dish Name</h3>
                             <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 250kr</p>
+                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 0kr</p>
                         </div>
                         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                             <h3 className="text-2xl font-semibold mb-2 text-2xl font-semibold mb-4 text-gray-700">Dish Name</h3>
                             <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 500kr</p>
-                        </div>
-                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-semibold mb-2 text-2xl font-semibold mb-4 text-gray-700">Dish Name</h3>
-                            <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 500kr</p>
+                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price</p>
                         </div>
                         {/* Add more menu items as needed */}
                     </div>
