@@ -53,6 +53,7 @@ const RestaurantSweden = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {restaurants.map((restaurant, index) => (
             <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
+              <img src={restaurant.photo} alt={restaurant.name} className="w-full h-48 object-cover rounded-md mb-4" />
               <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
               <p className="mt-2">{restaurant.description}</p>
               <p className="mt-2">{restaurant.category}</p>
@@ -63,7 +64,12 @@ const RestaurantSweden = () => {
                 onClick={() => toggleFavorite(restaurant.name)}
               >
                 {isFavorite(restaurant.name) ? <FaHeart /> : <FaRegHeart />}
-              </button>
+                </button>
+              <Link href={`/sweden/cities/gothenburg/restaurant/${encodeURIComponent(restaurant.englishName ?? "")}`}>
+                <button className="mt-4 bg-teal-500 hover:bg-teal-400 text-white py-2 px-4 rounded block">
+                  Read More
+                </button>
+              </Link>
             </div>
           ))}
         </div>
