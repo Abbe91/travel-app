@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import countriesConfig from '../../config/countriesConfig';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import Image from 'next/image';
 
 const Norway = () => {
   const params = useParams() as Params;
@@ -40,7 +41,7 @@ const Norway = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {countryConfig.stads.map((stad: { name: string, image: string }, index: number) => (
               <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-                <img src={stad.image} alt={stad.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+                <Image src={stad.image} alt={stad.name} width={400} height={300} className="w-full h-48 object-cover rounded-lg mb-4" />
                 <h2 className="text-2xl font-semibold text-center">{stad.name}</h2>
                 <Link href={`/norway/cities/${stad.name.toLowerCase()}`}>
                   <p className="text-teal-300 hover:text-teal-200 text-lg underline text-center mt-2">Explore {stad.name}</p>
