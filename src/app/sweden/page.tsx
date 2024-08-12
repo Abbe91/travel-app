@@ -37,15 +37,17 @@ const Sweden = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-semibold mb-4">Welcome to {countryConfig.name}!</h2>
           <h3 className="text-2xl font-medium mb-4">Cities in {countryConfig.name}:</h3>
-          <ul className="flex flex-wrap justify-center gap-4">
-            {countryConfig.stads.map((stad: string, index: number) => (
-              <li key={index} className="bg-teal-700 hover:bg-teal-600 text-white px-4 py-2 rounded-lg shadow-md transition">
-                <Link href={`/sweden/cities/${stad.toLowerCase()}`}>
-                  {stad}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {countryConfig.stads.map((stad: { name: string, image: string }, index: number) => (
+              <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
+                <img src={stad.image} alt={stad.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+                <h2 className="text-2xl font-semibold text-center">{stad.name}</h2>
+                <Link href={`/sweden/cities/${stad.name.toLowerCase()}`}>
+                  <p className="text-teal-300 hover:text-teal-200 text-lg underline text-center mt-2">Explore {stad.name}</p>
                 </Link>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         <h2 className="text-3xl font-semibold mb-6 text-center">Places in {countryConfig.name}:</h2>
