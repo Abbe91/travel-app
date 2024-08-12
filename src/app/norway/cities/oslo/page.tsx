@@ -22,10 +22,10 @@ const Oslo = () => {
   return (
     <div className={styles.container}>
       <Link href={`/${countryName}/cities/${stad}/favorites`}>
-          <p className={styles.favoritesLink}>View Your Favorites</p>
-        </Link>
+        <p className={styles.favoritesLink}>View Your Favorites</p>
+      </Link>
       <h1 className={styles.title}>
-        Welcome to {countryConfig.stads[1]}!
+        Welcome to {countryConfig.stads[1].name}!
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {countryConfig.places.map((place: string, index: Key | null | undefined) => (

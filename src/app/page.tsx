@@ -4,7 +4,7 @@ import { SetStateAction, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-
+import Image from 'next/image';
 const europeanCountries = [
   "Sweden", "Norway", "Denmark", "Finland", "Iceland",
   "Germany", "France", "Italy", "Spain", "Portugal",
@@ -33,9 +33,11 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-center flex-1 px-4 sm:px-8 lg:px-16">
         {/* Image added before the title */}
-        <img
+        <Image
           src="/images/europ.jpeg"
           alt="Beautiful European landscape"
+          width={256}
+          height={256}
           className="w-64 h-64 object-cover rounded-full shadow-lg mb-6"
         />
 

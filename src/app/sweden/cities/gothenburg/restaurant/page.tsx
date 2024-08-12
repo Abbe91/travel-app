@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styles from "./RestaurantSweden.module.css";
 import { restaurants } from "../../../../../config/restaurantsConfig";
+import Image from "next/image";
 
 const RestaurantSweden = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -53,7 +54,7 @@ const RestaurantSweden = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {restaurants.map((restaurant, index) => (
             <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-              <img src={restaurant.photo} alt={restaurant.name} className="w-full h-48 object-cover rounded-md mb-4" />
+              <Image src={restaurant.photo} alt={restaurant.name} width={400} height={300} className="w-full h-48 object-cover rounded-md mb-4" />
               <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
               <p className="mt-2">{restaurant.description}</p>
               <p className="mt-2">{restaurant.category}</p>
