@@ -11,7 +11,7 @@ const RestaurantPage: React.FC = () => {
             author: "Happy Customer"
         },
         {
-            text: "Oh my. This is a Guide Michelin restaurant with a really friendly feeling to it! I loved the service as much as the food! It's the kind of place where you think you go once - and then you actually want to go the next day again. I will definitely return! We had the 4 course meal and it's definitely enough food to get full from it! However would love to try a larger one next time!",
+            text: "Oh my. This is a Guide Michelin restaurant with a really friendly feeling to it! I loved the service as much as the food! It&apos;s the kind of place where you think you go once - and then you actually want to go the next day again. I will definitely return! We had the 4 course meal and it&apos;s definitely enough food to get full from it! However would love to try a larger one next time!",
             author: "Jonas Larsson, Local Guide"
         },
         {
@@ -36,7 +36,7 @@ const RestaurantPage: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
             {/* Hero Section */}
-            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url('/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg')" }}>
+            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url(&quot;/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg&quot;)" }}>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-center">
                     <h1 className="text-5xl font-bold mb-4">Welcome to Heaven 23</h1>
@@ -69,25 +69,6 @@ const RestaurantPage: React.FC = () => {
                             <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
                             <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 500kr</p>
                         </div>
-                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                            <Image src="/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg" alt="Dish Name" width={500} height={300} className="w-full h-48 object-cover rounded-lg mb-4" />
-                            <h3 className="text-2xl font-semibold mb-2 text-gray-700">Dish Name</h3>
-                            <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 550kr</p>
-                        </div>
-                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                            <Image src="/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg" alt="Dish Name" width={500} height={300} className="w-full h-48 object-cover rounded-lg mb-4" />
-                            <h3 className="text-2xl font-semibold mb-2 text-gray-700">Dish Name</h3>
-                            <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 600kr</p>
-                        </div>
-                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                            <Image src="/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg" alt="Dish Name" width={500} height={300} className="w-full h-48 object-cover rounded-lg mb-4" />
-                            <h3 className="text-2xl font-semibold mb-2 text-gray-700">Dish Name</h3>
-                            <p className="text-gray-700 mb-4">A delightful description of the dish that entices the taste buds.</p>
-                            <p className="mt-2 text-teal-600 font-bold text-xl">$Price: 600kr</p>
-                        </div>
-                        {/* Add more menu items as needed */}
                     </div>
                 </div>
             </section>
@@ -99,7 +80,7 @@ const RestaurantPage: React.FC = () => {
                     <div className="relative">
                         {/* Carousel Item */}
                         <div className="review-item text-center bg-white p-8 rounded-lg shadow-lg mb-6">
-                            <p className="text-xl italic mb-4 text-primary text-teal-700">"{reviews[currentReviewIndex].text}"</p>
+                            <p className="text-xl italic mb-4 text-primary text-teal-700">&quot;{reviews[currentReviewIndex].text}&quot;</p>
                             <p className="font-semibold text-primary text-teal-700">- {reviews[currentReviewIndex].author}</p>
                         </div>
 
