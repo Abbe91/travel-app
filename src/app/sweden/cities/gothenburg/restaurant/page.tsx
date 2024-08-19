@@ -9,6 +9,7 @@ import Image from "next/image";
 
 const RestaurantSweden = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
@@ -39,6 +40,10 @@ const RestaurantSweden = () => {
 
   const isFavorite = (restaurant: string) => favorites.includes(restaurant);
 
+  const handleImageError = (restaurantName: string) => {
+    setImageErrors(prevErrors => ({ ...prevErrors, [restaurantName]: true }));
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-600 to-teal-900 text-white">
       <div className="container mx-auto py-8 px-4">
@@ -54,7 +59,21 @@ const RestaurantSweden = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {restaurants.map((restaurant, index) => (
             <div key={index} className="bg-teal-700 hover:bg-teal-600 text-white p-6 rounded-lg shadow-md transition">
-              <Image src={restaurant.photo} alt={restaurant.name} width={400} height={300} className="w-full h-48 object-cover rounded-md mb-4" />
+              {imageErrors[restaurant.name] ? (
+                <div className="fallback-image">
+                  {restaurant.name}
+                </div>
+              ) : (
+                <Image 
+                  src={restaurant.photo} 
+                  alt={restaurant.name} 
+                  width={400} 
+                  height={300} 
+                  className="w-full h-48 object-cover rounded-lg mb-4" 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  onError={() => handleImageError(restaurant.name)}
+                />
+              )}
               <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
               <p className="mt-2">{restaurant.description}</p>
               <p className="mt-2">{restaurant.category}</p>
@@ -65,7 +84,7 @@ const RestaurantSweden = () => {
                 onClick={() => toggleFavorite(restaurant.englishName)}
               >
                 {isFavorite(restaurant.name) ? <FaHeart /> : <FaRegHeart />}
-                </button>
+              </button>
               <Link href={`/sweden/cities/gothenburg/restaurant/${encodeURIComponent(restaurant.englishName ?? "")}`}>
                 <button className="mt-4 bg-teal-500 hover:bg-teal-400 text-white py-2 px-4 rounded block">
                   Read More

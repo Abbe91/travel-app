@@ -36,12 +36,22 @@ const RestaurantPage: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
             {/* Hero Section */}
-            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url(&quot;/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg&quot;)" }}>
+            <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url('/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg')" }}>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-center">
                     <h1 className="text-5xl font-bold mb-4">Welcome to Thornstroms Kök</h1>
                     <p className="text-xl mb-8">Experience the finest dining in Gothenburg</p>
                     <a href="#menu" className="bg-teal-500 hover:bg-teal-400 text-primary py-3 px-6 rounded-full text-lg">Explore Our Menu</a>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 z-0">
+                    <Image
+                        src="/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg"
+                        alt="Thornstroms Kök"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        className="opacity-50"
+                    />
                 </div>
             </section>
 

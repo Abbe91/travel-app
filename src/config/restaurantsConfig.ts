@@ -6,7 +6,7 @@ export const restaurants = [
     category: "Fine Dining",
     price: "$$$",
     rating: 4.5,
-    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok.jpg",
+    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg",
   },
   {
     name: "Thörnströms Kök",
@@ -15,7 +15,7 @@ export const restaurants = [
     category: "Fine Dining",
     price: "$$$$",
     rating: 4.8,
-    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok.jpg",
+    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg",
   },
   {
     name: "Sjömagasinet",
@@ -24,7 +24,7 @@ export const restaurants = [
     category: "Seafood",
     price: "$$$",
     rating: 4.7,
-    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok.jpg", 
+    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg", 
   },
   {
     name: "Koka",
@@ -33,7 +33,7 @@ export const restaurants = [
     category: "Nordic",
     price: "$$$$",
     rating: 4.6,
-    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok.jpg", 
+    photo: "/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg", 
   },
   // Add more restaurants as needed
 ];

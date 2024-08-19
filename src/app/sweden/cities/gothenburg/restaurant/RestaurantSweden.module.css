@@ -1,0 +1,9 @@
+.fallback-image {
+    background-color: #ccc; /* or any other fallback styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    height: 300px; /* same as the image height */
+  }
