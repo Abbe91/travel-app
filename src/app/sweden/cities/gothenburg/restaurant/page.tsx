@@ -81,7 +81,7 @@ const RestaurantSweden = () => {
               <p className="mt-2">Rating: {restaurant.rating}</p>
               <button
                 className={styles.favoriteButton}
-                onClick={() => toggleFavorite(restaurant.englishName)}
+                onClick={() => toggleFavorite(restaurant.name)}
               >
                 {isFavorite(restaurant.name) ? <FaHeart /> : <FaRegHeart />}
               </button>
