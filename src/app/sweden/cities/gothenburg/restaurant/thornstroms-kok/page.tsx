@@ -39,9 +39,9 @@ const RestaurantPage: React.FC = () => {
             <section className="hero relative bg-cover bg-center h-[600px] flex items-center justify-center text-primary" style={{ backgroundImage: "url('/images/restaurant/sweden/gothenburg/thornstroms-kok/thornstroms-kok.jpg')" }}>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-center">
-                    <h1 className="text-5xl font-bold mb-4">Welcome to Thornstroms Kök</h1>
-                    <p className="text-xl mb-8">Experience the finest dining in Gothenburg</p>
-                    <a href="#menu" className="bg-teal-500 hover:bg-teal-400 text-primary py-3 px-6 rounded-full text-lg">Explore Our Menu</a>
+                    <h1 className="text-5xl font-bold mb-4 text-white">Welcome to Thornstroms Kök</h1>
+                    <p className="text-xl mb-8 text-white">Experience the finest dining in Gothenburg</p>
+                    <a href="#menu" className="bg-teal-500 hover:bg-teal-400 text-primary py-3 px-6 rounded-full text-lg text-white">Explore Our Menu</a>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 z-0">
                     <Image
@@ -122,7 +122,7 @@ const RestaurantPage: React.FC = () => {
             {/* Offers Section */}
             <section className="offers py-16 bg-teal-700 text-primary">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-semibold mb-12 text-center">Special Offers</h2>
+                    <h2 className="text-4xl font-semibold mb-12 text-center text-white">Special Offers</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div className="offer-item p-8 bg-teal-600 rounded-lg shadow-lg">
                             <h3 className="text-2xl font-semibold mb-4 text-primary">Summer Special</h3>
