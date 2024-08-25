@@ -91,39 +91,39 @@ const Sweden = () => {
             <div className="bg-white text-black p-5 rounded-xl shadow-lg">
               <Image src={kok} alt="Cuisine" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
               <h3 className="text-2xl font-semibold mb-4">Cuisine</h3>
-              <p className="text-lg">Experience the unique flavors of {countryConfig.name}'s cuisine, from traditional dishes to modern culinary delights.</p>
-            </div>
-            <div className="bg-white text-black p-5 rounded-xl shadow-lg">
-              <Image src={kok} alt="Festivals" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
-              <h3 className="text-2xl font-semibold mb-4">Festivals</h3>
-              <p className="text-lg">Join in the celebrations of various festivals that showcase the rich cultural heritage of {countryConfig.name}.</p>
-            </div>
-            <div className="bg-white text-black p-5 rounded-xl shadow-lg">
-              <Image src={kok} alt="Art and Music" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
-              <h3 className="text-2xl font-semibold mb-4">Art and Music</h3>
-              <p className="text-lg">Discover the vibrant art and music scene in {countryConfig.name}, featuring local and international talents.</p>
-            </div>
-            <div className="bg-white text-black p-5 rounded-xl shadow-lg">
-              <Image src={kok} alt="Historical Sites" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
-              <h3 className="text-2xl font-semibold mb-4">Historical Sites</h3>
-              <p className="text-lg">Explore the historical sites and landmarks that tell the story of {countryConfig.name}'s rich past.</p>
+              <p className="text-lg">Experience the unique flavors of {countryConfig.name}&#39;s cuisine, from traditional dishes to modern culinary delights.</p>
+              </div>
+              <div className="bg-white text-black p-5 rounded-xl shadow-lg">
+                <Image src={kok} alt="Festivals" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">Festivals</h3>
+                <p className="text-lg">Join in the celebrations of various festivals that showcase the rich cultural heritage of {countryConfig.name}.</p>
+              </div>
+              <div className="bg-white text-black p-5 rounded-xl shadow-lg">
+                <Image src={kok} alt="Art and Music" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">Art and Music</h3>
+                <p className="text-lg">Discover the vibrant art and music scene in {countryConfig.name}, featuring local and international talents.</p>
+              </div>
+              <div className="bg-white text-black p-5 rounded-xl shadow-lg">
+                <Image src={kok} alt="Historical Sites" width={300} height={200} className="w-full h-40 object-cover rounded-lg mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">Historical Sites</h3>
+                <p className="text-lg">Explore the historical sites and landmarks that tell the story of {countryConfig.name}&#39;s rich past.</p>
+              </div>
+              </div>
+              </div>
+              <h2 className="text-4xl font-semibold mb-8 text-center text-black">Famous Places in {countryConfig.name}:</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                {countryConfig.places.map((place: string, index: Key | null | undefined) => (
+                  <Box 
+                    key={index} 
+                    country={countryConfig.name} 
+                    name={place} 
+                    place={place} 
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <h2 className="text-4xl font-semibold mb-8 text-center text-black">Famous Places in {countryConfig.name}:</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {countryConfig.places.map((place: string, index: Key | null | undefined) => (
-            <Box 
-              key={index} 
-              country={countryConfig.name} 
-              name={place} 
-              place={place} 
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+);
 };
 
 export default Sweden;
