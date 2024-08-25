@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import ThreeBoxesSection from '../app/components/threeBoxesHome/page';
+import ThreeBoxesSection from './components/threeBoxesHome/BoxHome';
 
 
 const europeanCountries = [
