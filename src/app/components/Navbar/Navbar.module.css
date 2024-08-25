@@ -6,7 +6,7 @@
     padding: 1rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 10;
+    z-index: 50;
 }
 
 .container {
@@ -25,7 +25,7 @@
 
 .menu-toggle {
     color: #fff;
-    z-index: 20; /* Ensure the toggle button is above the overlay */
+    z-index: 20; 
 }
 
 .menu {
@@ -72,7 +72,7 @@
 }
 
 .menuItem:hover a {
-    color: #D1D5DB; /* Tailwind's text-gray-300 */
+    color: #D1D5DB;
     transform: scale(1.05);
 }
 
