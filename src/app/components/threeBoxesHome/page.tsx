@@ -1,4 +1,5 @@
-// components/ThreeBoxesSection.tsx
+// src/app/components/threeBoxesHome/page.tsx
+import React from 'react';
 import Image from 'next/image';
 
 interface ThreeBoxesSectionProps {
