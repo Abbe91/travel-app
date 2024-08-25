@@ -17,7 +17,8 @@ const countriesConfig: CountryConfig[] = [
     stads: [
       { name: "Stockholm", image: "/images/stockholm.jpg" },
       { name: "Gothenburg", image: "/images/gothenburg.webp" },
-      { name: "Malmo", image: "/images/malmo.jpg" }
+      { name: "Malmo", image: "/images/malmo.jpg" },
+      { name: "Halmstad", image: "/images/gothenburg.webp" },
     ],
     places: ["restaurant", "museum", "cafe", "park"]
   },

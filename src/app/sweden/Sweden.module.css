@@ -16,6 +16,10 @@
     margin-bottom: 2rem;
   }
   
+  h2{
+    color: #07090a !important;
+  }
+  
   .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
