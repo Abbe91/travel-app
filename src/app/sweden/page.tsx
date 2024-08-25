@@ -118,7 +118,6 @@ const Sweden = () => {
               country={countryConfig.name} 
               name={place} 
               place={place} 
-              stad={place.toLowerCase().replace(/\s+/g, '-')}
             />
           ))}
         </div>
