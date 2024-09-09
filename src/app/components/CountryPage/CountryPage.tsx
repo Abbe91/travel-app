@@ -33,7 +33,7 @@ const CountryPage = () => {
         </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {countryConfig.stads.map((stad: string, index: number) => (
-            <Box key={index} country={countryConfig.name} name={stad} place={''} />
+            <Box key={index} country={countryConfig.name} name={stad} />
           ))}
         </div>
       </div>
