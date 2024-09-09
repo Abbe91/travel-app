@@ -1,43 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import styles from './Box.module.css';
+import placesConfig from '../../../config/placesConfig'; 
 
 interface BoxProps {
   country: string;
   stad?: string;
   name: string;
-  place?: string;
 };
 
-const Box = ({ country, stad = '', name, place }: BoxProps) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const Box = ({ country, stad = '', name }: BoxProps) => {
+  const [place, setPlace] = useState<{ name: string; image: string } | null>(null);
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-    setIsFavorite(favorites[`${country}-${stad ? `${stad}-` : ''}${name}`] || false);
-  }, [country, stad, name]);
-
-  const toggleFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-    const key = `${country}-${stad ? `${stad}-` : ''}${name}`;
-    if (favorites[key]) {
-      delete favorites[key];
-    } else {
-      favorites[key] = true;
+    const countryConfig = placesConfig.find(c => c.name.toLowerCase() === country.toLowerCase());
+    if (countryConfig) {
+      const foundPlace = countryConfig.places.find(p => p.name.toLowerCase() === name.toLowerCase());
+      setPlace(foundPlace || null);
     }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    setIsFavorite(!isFavorite);
-  };
+  }, [country, name]);
 
-  // Log the props to debug
-  useEffect(() => {
-    console.log("Box Component Props:", { country, stad, name, place });
-  }, [country, stad, name, place]);
-
-  const url = place 
-    ? `/${country.toLowerCase()}/cities/${stad.toLowerCase()}/${place.toLowerCase()}`
-    : `/${country.toLowerCase()}/cities/${stad.toLowerCase()}`;
+  const url = `/${country.toLowerCase()}/cities/${stad.toLowerCase()}/${name.toLowerCase()}`;
 
   return (
     <div className={styles.box}>
@@ -46,9 +29,12 @@ const Box = ({ country, stad = '', name, place }: BoxProps) => {
           <h3>{name} in {stad ? `${stad}, ` : ''}{country} &rarr;</h3>
         </p>
       </Link>
-      <button className={styles.favoriteButton} onClick={toggleFavorite}>
-        {isFavorite ? <FaHeart /> : <FaRegHeart />}
-      </button>
+      {place && (
+        <div className={styles.place}>
+          <img src={place.image} alt={place.name} className={styles.placeImage} />
+          <p>{place.name}</p>
+        </div>
+      )}
     </div>
   );
 };
