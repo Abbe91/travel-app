@@ -56,7 +56,6 @@ const Gothenburg = () => {
               country={countryName}
               stad={stad}
               name={place} 
-              place={place.toLowerCase().replace(/\s+/g, '-')} 
             />
           ))}
         </div>
