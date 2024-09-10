@@ -5,10 +5,10 @@ import Box from "../components/Box/Box";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import hero from "../../../public/images/gothenburg.webp";
-//import kok from "../../../public/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg";
+import kok from "../../../public/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg";
 import countriesConfig from "../../config/countriesConfig";
 import CountryInfo from "../components/CountryInfo/CountryInfo";
-//import CulturalHighlights from "../components/CulturalHighlights/page";
+import CulturalHighlights from "../components/CulturalHighlights/CulturalHighlights";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import Image from "next/image";
@@ -33,7 +33,7 @@ const Sweden = () => {
   const formTitle = "Discover Sweden";
   const subtitle1 = "Vibrant Cities";
   const subtitle2 = "Stunning Landscapes";
-  /*
+
   const culturalHighlights = [
     {
       title: "Cuisine",
@@ -60,7 +60,7 @@ const Sweden = () => {
       image: kok.src,
     },
   ];
-*/
+
   useEffect(() => {
     const config = countriesConfig.find(
       (c) => c.name.toLowerCase() === "sweden"
@@ -153,15 +153,13 @@ const Sweden = () => {
             />
           </div>
         </div>
-
-        {/* New Section 2: Cultural Highlights 
+        New Section 2: Cultural Highlights
         <div>
           <CulturalHighlights
             country={countryName}
             culturalHighlights={culturalHighlights}
           />
         </div>
-*/}
         {/* New Section 3: Places */}
         <h2 className="text-4xl font-semibold mb-8 text-center text-black">
           Famous Places in {countryConfig.name}:
