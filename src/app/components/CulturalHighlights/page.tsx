@@ -1,16 +1,16 @@
 // components/CulturalHighlights/page.tsx
 
 //import Image from "next/image";
-
+/*
 interface CulturalHighlight {
   title: string;
   description: string;
   image: string;
 }
-
+*/
 interface CountryPageProps {
   country: string;
-  culturalHighlights: CulturalHighlight[];
+  //culturalHighlights: any[];
 }
 
 const CulturalHighlights = ({
