@@ -11,7 +11,10 @@ interface CountryPageProps {
   culturalHighlights: CulturalHighlight[];
 }
 
-const CountryPage = ({ country, culturalHighlights }: CountryPageProps) => {
+const CulturalHighlights = ({
+  country,
+  culturalHighlights,
+}: CountryPageProps) => {
   return (
     <div className="mb-16">
       <h2 className="text-4xl font-semibold mb-6 text-center text-black">
@@ -40,4 +43,4 @@ const CountryPage = ({ country, culturalHighlights }: CountryPageProps) => {
   );
 };
 
-export default CountryPage;
+export default CulturalHighlights;
