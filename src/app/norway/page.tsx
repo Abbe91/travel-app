@@ -33,7 +33,7 @@ const Norway = () => {
   const formTitle = "Discover Norway";
   const subtitle1 = "Vibrant Cities";
   const subtitle2 = "Stunning Landscapes";
-  /*
+
   const culturalHighlights = [
     {
       title: "Cuisine",
@@ -60,7 +60,7 @@ const Norway = () => {
       image: kok.src,
     },
   ];
-*/
+
   useEffect(() => {
     const config = countriesConfig.find(
       (c) => c.name.toLowerCase() === "norway"
@@ -154,17 +154,12 @@ const Norway = () => {
           </div>
         </div>
 
-        {/* New Section 2: Cultural Highlights 
-        
         <div className="text-black">
-        
           <CulturalHighlights
             country={countryName}
             culturalHighlights={culturalHighlights}
           />
         </div>
-
-        */}
 
         {/* New Section 3: Places */}
         <h2 className="text-4xl font-semibold mb-8 text-center text-black">
