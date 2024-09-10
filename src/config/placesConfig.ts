@@ -12,19 +12,19 @@ interface Place {
     {
       name: "Sweden",
       places: [
-        { name: "Restaurant", image: "/images/stockholm.jpg" },
-        { name: "Museum", image: "/images/gothenburg.webp" },
-        { name: "Cafe", image: "/images/malmo.jpg" },
-        { name: "Park", image: "/images/stockholm.jpg" }
+        { name: "Restaurant", image: "/images/places/restaurant.jpg" },
+        { name: "Museum", image: "/images/places/museum.jpg" },
+        { name: "Cafe", image: "/images/places/cafe.jpg" },
+        { name: "Park", image: "/images/places/park.jpg" }
       ]
     },
     {
       name: "Norway",
       places: [
-        { name: "Restaurant", image: "/images/stockholm.jpg" },
-        { name: "Museum", image: "/images/gothenburg.webp" },
-        { name: "Cafe", image: "/images/malmo.jpg" },
-        { name: "Park", image: "/images/stockholm.jpg" }
+        { name: "Restaurant", image: "/images/places/restaurant.jpg" },
+        { name: "Museum", image: "/images/places/museum.jpg" },
+        { name: "Cafe", image: "/images/places/cafe.jpg" },
+        { name: "Park", image: "/images/places/park.jpg" }
       ]
     }
   ];
