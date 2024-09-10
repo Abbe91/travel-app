@@ -8,7 +8,7 @@ import hero from "../../../public/images/gothenburg.webp";
 import kok from "../../../public/images/restaurant/sweden/gothenburg/thornstroms-kok/dishnu1.jpg";
 import countriesConfig from "../../config/countriesConfig";
 import CountryInfo from "../components/CountryInfo/CountryInfo";
-import CulturalHighlights from "../components/CulturalHighlights/page";
+import CulturalHighlights from "../components/CulturalHighlights/CulturalHighlights";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import Image from "next/image";

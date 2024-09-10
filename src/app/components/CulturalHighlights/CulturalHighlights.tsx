@@ -8,7 +8,7 @@ interface CulturalHighlight {
   image: string;
 }
 */
-interface CountryPageProps {
+interface CulturalHighlightsProps {
   country: string;
   //culturalHighlights: any[];
 }
@@ -17,7 +17,7 @@ const CulturalHighlights = (
   {
     //country,
     //culturalHighlights,
-  }: CountryPageProps
+  }: CulturalHighlightsProps
 ) => {
   return (
     <div className="mb-16">
