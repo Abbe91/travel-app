@@ -1,3 +1,4 @@
+// components/CulturalHighlights/page.tsx
 import Image from "next/image";
 
 interface CulturalHighlight {

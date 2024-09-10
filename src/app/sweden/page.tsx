@@ -1,3 +1,4 @@
+// pages/sweden.tsx
 "use client";
 
 import { Key, useEffect, useState } from "react";
@@ -9,31 +10,29 @@ import kok from "../../../public/images/restaurant/sweden/gothenburg/thornstroms
 import countriesConfig from "../../config/countriesConfig";
 import CountryInfo from "../components/CountryInfo/CountryInfo";
 import CulturalHighlights from "../components/CulturalHighlights/page";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
 import Image from "next/image";
 
+interface CulturalHighlight {
+  title: string;
+  description: string;
+  image: string;
+}
+
 const Sweden = () => {
-  const params = useParams() as Params;
+  const params = useParams();
   const [countryConfig, setCountryConfig] = useState<any | null>(null);
   const [country, setCountry] = useState<string | null>(null);
 
-  // Meta information
   const metaTitle = "Explore Sweden";
   const metaContent =
     "Discover the beauty and charm of Sweden, from its vibrant cities to its stunning landscapes.";
 
-  // Query parameters
   const countryName = "Sweden";
   const countryDescription =
     "Sweden is known for its beautiful landscapes, rich history, and vibrant culture. Explore the various attractions and experiences that this country has to offer.";
-  const query = "This is a query parameter";
 
-  // Form and subtitles
-  const formTitle = "Discover Sweden";
-  const subtitle1 = "Vibrant Cities";
-  const subtitle2 = "Stunning Landscapes";
-  const culturalHighlights = [
+  const culturalHighlights: CulturalHighlight[] = [
     {
       title: "Cuisine",
       description:
@@ -83,7 +82,6 @@ const Sweden = () => {
         <title>{metaTitle}</title>
         <meta name="description" content={metaContent} />
       </Head>
-      {/* Hero Section */}
       <section className="relative h-screen w-full bg-gray-800">
         <Image
           src={hero}
@@ -106,7 +104,6 @@ const Sweden = () => {
           </Link>
         </div>
       </section>
-      {/* Main Content Section */}
       <div className="container mx-auto py-10 px-6">
         <div className="mb-16">
           <h2 className="text-4xl font-semibold mb-6 text-center text-black">
@@ -139,7 +136,6 @@ const Sweden = () => {
             )}
           </div>
         </div>
-        {/* New Section 1: Country Overview */}
         <div className="mb-16">
           <CountryInfo country={countryName} description={countryDescription} />
           <div className="flex justify-center">
@@ -152,16 +148,12 @@ const Sweden = () => {
             />
           </div>
         </div>
-
-        {/* New Section 2: Cultural Highlights */}
         <div>
           <CulturalHighlights
             country={countryName}
             culturalHighlights={culturalHighlights}
           />
         </div>
-
-        {/* New Section 3: Places */}
         <h2 className="text-4xl font-semibold mb-8 text-center text-black">
           Famous Places in {countryConfig.name}:
         </h2>
