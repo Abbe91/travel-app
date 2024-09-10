@@ -58,7 +58,7 @@ const Norway = () => {
               key={index} 
               country={countryConfig.name} 
               name={place} 
-              place={place} 
+              //place={place} 
             />
           ))}
         </div>
