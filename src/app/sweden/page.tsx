@@ -33,7 +33,12 @@ const Sweden = () => {
   const formTitle = "Discover Sweden";
   const subtitle1 = "Vibrant Cities";
   const subtitle2 = "Stunning Landscapes";
-  const culturalHighlights: any[] = [
+  interface CulturalHighlight {
+    title: string;
+    description: string;
+    image: string;
+  }
+  const culturalHighlights: CulturalHighlight[] = [
     {
       title: "Cuisine",
       description:
