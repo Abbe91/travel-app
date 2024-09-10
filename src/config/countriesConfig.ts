@@ -20,7 +20,7 @@ const countriesConfig: CountryConfig[] = [
       { name: "Malmo", image: "/images/malmo.jpg" },
       { name: "Halmstad", image: "/images/gothenburg.webp" },
     ],
-    places: ["restaurant", "museum", "cafe", "park"]
+    places: ["restaurant", "museum", "cafe", "park"],
   },
   {
     name: "Norway",
@@ -28,9 +28,19 @@ const countriesConfig: CountryConfig[] = [
     stads: [
       { name: "Oslo", image: "/images/oslo.jpg" },
       { name: "Bergen", image: "/images/bergen.jpg" },
-      { name: "Stavanger", image: "/images/stavanger.jpg" }
+      { name: "Stavanger", image: "/images/stavanger.jpg" },
     ],
-    places: ["Restaurant", "Museum", "Cafe", "Park"]
+    places: ["Restaurant", "Museum", "Cafe", "Park"],
+  },
+  {
+    name: "Denmark",
+    country: "test3",
+    stads: [
+      { name: "Oslo", image: "/images/oslo.jpg" },
+      { name: "Bergen", image: "/images/bergen.jpg" },
+      { name: "Stavanger", image: "/images/stavanger.jpg" },
+    ],
+    places: ["Restaurant", "Museum", "Cafe", "Park"],
   },
 ];
 
