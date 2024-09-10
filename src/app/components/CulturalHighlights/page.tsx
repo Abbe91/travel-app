@@ -1,6 +1,6 @@
 // components/CulturalHighlights/page.tsx
 
-import Image from "next/image";
+//import Image from "next/image";
 
 interface CulturalHighlight {
   title: string;
@@ -15,14 +15,14 @@ interface CountryPageProps {
 
 const CulturalHighlights = ({
   country,
-  culturalHighlights,
+  //culturalHighlights,
 }: CountryPageProps) => {
   return (
     <div className="mb-16">
       <h2 className="text-4xl font-semibold mb-6 text-center text-black">
         Cultural Highlights of {country}
       </h2>
-
+      {/* New Section 2: Cultural Highlights 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {culturalHighlights.map((highlight, index) => (
           <div
@@ -41,6 +41,7 @@ const CulturalHighlights = ({
           </div>
         ))}
       </div>
+      */}
     </div>
   );
 };
